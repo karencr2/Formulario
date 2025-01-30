@@ -5,95 +5,117 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario</title>
-    <link rel="stylesheet" href="/formulario.css">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="formulario.css">
+    <form id="myForm" action="https://script.google.com/macros/s/AKfycbwe-hyqAKWPT49oB93pNnim2nWJ9yho6yzwZCdsb__DjeiIJmM8Wr1ZwMW1CQ7TWeB1hw/exec" method="POST">
+
+
+
 </head>
 <body>
     
     <div class="campo">
 
-    <h1 id="titulo">Formulario de Satisfação</h1>
-    <p id="subtitulo">Curso Carreira Programador JS</p>
+    <h1 id="titulo">Formulario de Requisição BI</h1>
+    <!--<p id="subtitulo">Curso Carreira Programador JS</p> -->
     
     <br>
 
     </div>
 
-    <form action="dados.html" method="get">
+    <form id="myForm" action="AKfycbwe-hyqAKWPT49oB93pNnim2nWJ9yho6yzwZCdsb__DjeiIJmM8Wr1ZwMW1CQ7TWeB1hw" method="POST">
         <fieldset class="grupo">
+            <legend><strong>Dados do Solicitante</strong></legend> <br>
+            
             <div class="campo">
                 <label><strong>Nome</strong></label>
-                <input type="text"nome= "nome" id="nome" required>
-            </div>
+                <input type="text" name= "nome" id="nome" placeholder="Digite seu nome" required>
+                </div>
 
             <div class="campo">
                 <label for="sobrenome"><strong>Sobrenome</strong></label>
-                <input type="text"nome="sobrenome" id="sobrenome" required>
-          
+                <input type="text" name="sobrenome" id="sobrenome" placeholder="Digite seu sobrenome" required>
+                 </div>
+                
+            <div class="campo">
+
+                    <label for="email"><strong>Email</strong></label>
+                    <input type="email" name="email" id="email"  placeholder="Digite seu email" required>
+                
+                </div>
+
+            <div class="grupo-linha">
+                <div class="campo">
+
+                    <label for="setor"><strong>Setor</strong></label>
+                    <input type="text" name="setor" id="setor" placeholder="Ex: Financeiro, TI, Vendas"required>
+                
+                    </div>
+
+                <div class="campo">
+
+                    <label for="cargo"><strong>Cargo</strong></label>
+                    <input type="text" name="cargo" id="cargo" placeholder="Ex: Analista, Gerente, Assistente"required>
+                
+                    </div>
+            </div>
+
+            <div>
+
+                    <label for="prioridade"><strong>Nível de prioridade do BI?</strong> </label>
+                    <select name="prioridade" id="prioridade">
+                
+                        <option selected disabled value="">Selecione</option>
+                        <option value="P">Baixa</option>
+                        <option value="R">Média</option> 
+                        <option value="B">Alta</option> 
+                
+                    </select>
+                
+                     </div>
         </fieldset>
 
     </div>
-
-    <div class="campo">
-
-    <label for="email"><strong>Email</strong></label>
-    <input type="email" nome="email" id="email" required>
-
-    </div>
-
-    <div class="campo">
-
-        <label for="sexo"><strong>Sexo:</strong> </label>
-        <input type="radio"name="sexo"value="F" id="sexoF"> Feminino
-        <input type="radio"name="sexo"value="M" id="sexoM"> Masculino
-
-    </div>
-
-    <div>
-
-    <label for="satisfação"><strong>Qual o seu nível de satifação com o curso?</strong> </label>
-    <select name="satisfação" id="satisfação">
-
-        <option selected disabled value="">Selecione</option>
-        <option value="P">Péssimo</option>
-        <option value="R">Regular</option> 
-        <option value="B">Bom</option>
-        <option value="E">Excelente</option> 
-
-    </select>
-
-     </div>
-     <br>
-    <fieldset class="grupo">
-        <div id="check">
-            <label for="tecnologia"><strong>Selecione as tecnologias que já utiliza:</strong></label> <br> <br>
-
-            <input type="checkbox" id="tecnologia1" nome="tecnologia1" value="HTML">
-            <label for="tecnologia1">HTML</label>
-            <input type="checkbox" id="tecnologia2" nome="tecnologia2"value="CSS">
-            <label for="tecnologia2">CSS</label>
-            <input type="checkbox" id="tecnologia3" nome="tecnologia3" value="JavaScript">
-            <label for="tecnologia3">JavaScript</label>
-            <input type="checkbox" id="tecnologia4" nome="tecnologia4" value="Python">
-            <label for="tecnologia3">Python</label>
-            <input type="checkbox" id="tecnologia5" nome="tecnologia5" value="PHP">
-            <label for="tecnologia5">PHP</label>
-            <input type="checkbox" id="tecnologia6" nome="tecnologia6" value="C#">
-            <label for="tecnologia6">C#</label>
-            
+ 
+    <br>
+      <fieldset class="grupo">
+        <legend><strong>Detalhes da Requisição</strong></legend> <br>
+        
+        <div class="campo">
+            <label for="objetivo"><strong>Objetivo do BI:</strong></label>
+            <p>Qual é o principal propósito desse BI?</p>
+            <textarea name="objetivo" id="objetivo" cols="38" rows="3" placeholder="Ex: Melhorar a análise de vendas" required></textarea>
         </div>
-
-
+        <div class="campo">
+            <label for="necessidade"><strong>Descrição da Necessidade:</strong></label>
+            <p>Qual problema você está enfrentando ou qual necessidade esse BI resolverá?</p>
+            <textarea name="necessidade" id="necessidade" cols="38" rows="3" placeholder="Ex: Precisamos visualizar melhor os dados de estoque e etc..." required></textarea>
+        </div>
+        <div class="campo">
+            <label for="usuarios"><strong>Quem serão os usuários do BI:</strong></label>
+            <p> Quem utilizará o BI? </p>
+            <textarea name="usuarios" id="usuarios" cols="38" rows="3" placeholder="Ex: Gerentes, analistas, diretoria"></textarea>
+        </div>
+        <div class="campo">
+            <label for="fonte"><strong>Fonte de Dados:</strong></label>
+            <p> Quais sistemas, planilhas ou bancos de dados serão utilizados como fonte de dados?</p>
+            <textarea name="fonte" id="fonte" cols="38" rows="3" placeholder="Ex: ERP, Banco de Dados SQL, Planilhas" ></textarea>
+        </div>
+        <div class="campo">
+            <label for="fonte_dados"><strong>Design e Layout:</strong></label>
+            <p>Quais indicadores ou KPIs específicos precisam ser monitorados nesse BI?</p>
+            <textarea name="fonte_dados" id="fonte_dados" cols="38" rows="3" placeholder="Ex: Indicadores de KPI financeiros, gráficos de barras, gráfico de linhas ao longo do tempo..." required></textarea>
+        </div>
+        <div class="campo">
+            <label for="frequencia"><strong>Frequência de Atualização:</strong></label>
+            <p> Qual é a frequência necessária para a atualização dos dados? </p>
+            <textarea name="frequencia" id="frequencia" cols="38" rows="3" placeholder="Ex: Diária, Semanal, Mensal" ></textarea>
+        </div>
     </fieldset>
 
-    <div class="campo">
-        <br>
-        <label for="experiência"><strong>Conte um pouco de como está sendo sua experiência:</strong> </label>
-        <textarea name="experiência" id="experiência" cols="38" rows="6"></textarea>
-    </div>
+
+    
 
     <button class="botao" type="submit">Concluído</button>
 
-    </form>
-
-</body> 
-</html>
+    
