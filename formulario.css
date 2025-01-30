@@ -76,11 +76,11 @@ fieldset {
 }
 .grupo-linha {
     display: flex;
-    gap: 20px; /* Espaçamento entre os campos */
+    gap: 20px; 
 }
 
 .grupo-linha .campo {
-    flex: 1; /* Faz com que os campos fiquem do mesmo tamanho */
+    flex: 1; 
 }
 
 .campo select {
@@ -107,7 +107,7 @@ fieldset {
 
 .botao {
     display: block;
-    width: 200px; /* Defina a largura desejada */
+    width: 200px; 
     padding: 10px 15px;
     font-size: 1.2em;
     background: #079db1;
@@ -118,7 +118,7 @@ fieldset {
     cursor: pointer;
     text-align: center;
     transition: 0.3s;
-    margin: 0 auto; /* Centraliza o botão */
+    margin: 0 auto; 
 }
 
  
