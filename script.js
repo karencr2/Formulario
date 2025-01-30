@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
         };
 
         // Enviando os dados via Fetch API
-        fetch("URL_DO_SEU_WEBHOOK", {
+        fetch("https://script.google.com/macros/s/AKfycbwe-hyqAKWPT49oB93pNnim2nWJ9yho6yzwZCdsb__DjeiIJmM8Wr1ZwMW1CQ7TWeB1hw/exec", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
