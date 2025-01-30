@@ -11,6 +11,42 @@ document.addEventListener("DOMContentLoaded", function () {
         if (nome === "" || email === "" || setor === "" || cargo === "") {
             alert("Por favor, preencha todos os campos obrigatórios!");
             event.preventDefault(); // Impede o envio do formulário
+            return;
         }
+
+        // Criando objeto com os dados do formulário
+        let formData = {
+            nome: nome,
+            sobrenome: document.getElementById("sobrenome").value,
+            email: email,
+            setor: setor,
+            cargo: cargo,
+            prioridade: document.getElementById("prioridade").value,
+            objetivo: document.getElementById("objetivo").value,
+            necessidade: document.getElementById("necessidade").value,
+            usuarios: document.getElementById("usuarios").value,
+            fonte: document.getElementById("fonte").value,
+            fonte_dados: document.getElementById("fonte_dados").value,
+            frequencia: document.getElementById("frequencia").value
+        };
+
+        // Enviando os dados via Fetch API
+        fetch("URL_DO_SEU_WEBHOOK", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(formData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert("Dados enviados com sucesso!");
+            form.reset(); // Limpa o formulário após envio
+        })
+        .catch(error => {
+            alert("Erro ao enviar os dados: " + error);
+        });
+
+        event.preventDefault(); // Impede o envio padrão do formulário
     });
 });
