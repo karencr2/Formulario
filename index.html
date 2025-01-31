@@ -5,10 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario</title>
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="formulario.css">
-    <form id="myForm" action="https://script.google.com/macros/s/AKfycbwe-hyqAKWPT49oB93pNnim2nWJ9yho6yzwZCdsb__DjeiIJmM8Wr1ZwMW1CQ7TWeB1hw/exec" method="POST">
 
+    <link rel="stylesheet" href="formulario.css">
+    
 
 
 </head>
@@ -17,13 +16,12 @@
     <div class="campo">
 
     <h1 id="titulo">Formulario de Requisição BI</h1>
-    <!--<p id="subtitulo">Curso Carreira Programador JS</p> -->
     
     <br>
 
     </div>
 
-    <form id="myForm" action="AKfycbwe-hyqAKWPT49oB93pNnim2nWJ9yho6yzwZCdsb__DjeiIJmM8Wr1ZwMW1CQ7TWeB1hw" method="POST">
+    <form id="myForm">
         <fieldset class="grupo">
             <legend><strong>Dados do Solicitante</strong></legend> <br>
             
@@ -84,27 +82,27 @@
         <div class="campo">
             <label for="objetivo"><strong>Objetivo do BI:</strong></label>
             <p>Qual é o principal propósito desse BI?</p>
-            <textarea name="objetivo" id="objetivo" cols="38" rows="3" placeholder="Ex: Melhorar a análise de vendas" required></textarea>
+            <textarea name="objetivo" id="objetivo" cols="38" rows="3" placeholder="Ex: Aperfeiçoar a análise de vendas e identificar tendências." required></textarea>
         </div>
         <div class="campo">
             <label for="necessidade"><strong>Descrição da Necessidade:</strong></label>
             <p>Qual problema você está enfrentando ou qual necessidade esse BI resolverá?</p>
-            <textarea name="necessidade" id="necessidade" cols="38" rows="3" placeholder="Ex: Precisamos visualizar melhor os dados de estoque e etc..." required></textarea>
+            <textarea name="necessidade" id="necessidade" cols="38" rows="3" placeholder="Ex: Necessitamos de uma melhor visualização dos dados de estoque e outras informações essenciais." required></textarea>
         </div>
         <div class="campo">
             <label for="usuarios"><strong>Quem serão os usuários do BI:</strong></label>
             <p> Quem utilizará o BI? </p>
-            <textarea name="usuarios" id="usuarios" cols="38" rows="3" placeholder="Ex: Gerentes, analistas, diretoria"></textarea>
+            <textarea name="usuarios" id="usuarios" cols="38" rows="3" placeholder="Ex: João (Gerente), Maria (Analista), Pedro (Diretor)"></textarea>
         </div>
         <div class="campo">
             <label for="fonte"><strong>Fonte de Dados:</strong></label>
             <p> Quais sistemas, planilhas ou bancos de dados serão utilizados como fonte de dados?</p>
-            <textarea name="fonte" id="fonte" cols="38" rows="3" placeholder="Ex: ERP, Banco de Dados SQL, Planilhas" ></textarea>
+            <textarea name="fonte" id="fonte" cols="38" rows="3" placeholder="Ex: SAP (ERP), MySQL (Banco de Dados SQL), Excel (Planilhas)" ></textarea>
         </div>
         <div class="campo">
             <label for="fonte_dados"><strong>Design e Layout:</strong></label>
             <p>Quais indicadores ou KPIs específicos precisam ser monitorados nesse BI?</p>
-            <textarea name="fonte_dados" id="fonte_dados" cols="38" rows="3" placeholder="Ex: Indicadores de KPI financeiros, gráficos de barras, gráfico de linhas ao longo do tempo..." required></textarea>
+            <textarea name="fonte_dados" id="fonte_dados" cols="38" rows="3" placeholder="Ex: Indicadores de KPI com totais financeiros, gráficos de barras, gráfico de linhas ao longo do tempo..." required></textarea>
         </div>
         <div class="campo">
             <label for="frequencia"><strong>Frequência de Atualização:</strong></label>
@@ -118,4 +116,7 @@
 
     <button class="botao" type="submit">Concluído</button>
 
-    
+</form>
+<script src="script.js"></script>
+</body>
+</html>    
