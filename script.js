@@ -16,13 +16,13 @@ const firebaseConfig = {
 
 // Inicializa o Firebase
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);  // Inicializa o Firestore
-const analytics = getAnalytics(app);  // Inicia o Analytics (opcional)
+const db = getFirestore(app);   e
+const analytics = getAnalytics(app);   
 
 // Função para enviar os dados para o Firestore
 document.addEventListener("DOMContentLoaded", function() {
   document.getElementById('myForm').addEventListener('submit', async function(event) {
-    event.preventDefault();  // Impede o envio do formulário
+    event.preventDefault();  
 
     // Coleta os dados do formulário
     const nome = document.getElementById('nome').value;
@@ -37,14 +37,14 @@ document.addEventListener("DOMContentLoaded", function() {
         email: email,
         setor: setor,
         prioridade: prioridade,
-        timestamp: new Date()  // Adiciona a data/hora do envio
+        timestamp: new Date()   
       });
 
       alert('Dados armazenados no Firebase!');
-      document.getElementById('myForm').reset();  // Limpa o formulário após o envio
+      document.getElementById('myForm').reset();   
     } catch (e) {
-      console.error('Erro ao enviar dados: ', e);  // Log do erro
-      alert('Erro ao armazenar dados: ' + e.message);  // Exibe a mensagem do erro
+      console.error('Erro ao enviar dados: ', e);   
+      alert('Erro ao armazenar dados: ' + e.message);   
     }
   });
 });
