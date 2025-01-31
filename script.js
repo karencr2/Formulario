@@ -1,52 +1,50 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const form = document.querySelector("form");
+// Importando as funções necessárias do Firebase
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
+import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-analytics.js";
 
-    // Validação antes de enviar o formulário
-    form.addEventListener("submit", function (event) {
-        const nome = document.getElementById("nome").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const setor = document.getElementById("setor").value.trim();
-        const cargo = document.getElementById("cargo").value.trim();
+// Configuração do Firebase
+const firebaseConfig = {
+  apiKey: "AIzaSyByAE0kGdnx4jZ5WiOatGNWIMPDoOY5aDE",
+  authDomain: "requisicao-bi.firebaseapp.com",
+  projectId: "requisicao-bi",
+  storageBucket: "requisicao-bi.firebasestorage.app",
+  messagingSenderId: "709706456208",
+  appId: "1:709706456208:web:31b32e16b8044d9d274c15",
+  measurementId: "G-KS8RHFH6H0"
+};
 
-        if (nome === "" || email === "" || setor === "" || cargo === "") {
-            alert("Por favor, preencha todos os campos obrigatórios!");
-            event.preventDefault(); // Impede o envio do formulário
-            return;
-        }
+// Inicializa o Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);  // Inicializa o Firestore
+const analytics = getAnalytics(app);  // Inicia o Analytics (opcional)
 
-        // Criando objeto com os dados do formulário
-        let formData = {
-            nome: nome,
-            sobrenome: document.getElementById("sobrenome").value,
-            email: email,
-            setor: setor,
-            cargo: cargo,
-            prioridade: document.getElementById("prioridade").value,
-            objetivo: document.getElementById("objetivo").value,
-            necessidade: document.getElementById("necessidade").value,
-            usuarios: document.getElementById("usuarios").value,
-            fonte: document.getElementById("fonte").value,
-            fonte_dados: document.getElementById("fonte_dados").value,
-            frequencia: document.getElementById("frequencia").value
-        };
+// Função para enviar os dados para o Firestore
+document.addEventListener("DOMContentLoaded", function() {
+  document.getElementById('myForm').addEventListener('submit', async function(event) {
+    event.preventDefault();  // Impede o envio do formulário
 
-        // Enviando os dados via Fetch API
-        fetch("https://script.google.com/macros/s/AKfycbwe-hyqAKWPT49oB93pNnim2nWJ9yho6yzwZCdsb__DjeiIJmM8Wr1ZwMW1CQ7TWeB1hw/exec", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(formData)
-        })
-        .then(response => response.json())
-        .then(data => {
-            alert("Dados enviados com sucesso!");
-            form.reset(); // Limpa o formulário após envio
-        })
-        .catch(error => {
-            alert("Erro ao enviar os dados: " + error);
-        });
+    // Coleta os dados do formulário
+    const nome = document.getElementById('nome').value;
+    const email = document.getElementById('email').value;
+    const setor = document.getElementById('setor').value;
+    const prioridade = document.getElementById('prioridade').value;
 
-        event.preventDefault(); // Impede o envio padrão do formulário
-    });
+    try {
+      // Envia os dados para a coleção 'form_data' no Firestore
+      await addDoc(collection(db, "form_data"), {
+        nome: nome,
+        email: email,
+        setor: setor,
+        prioridade: prioridade,
+        timestamp: new Date()  // Adiciona a data/hora do envio
+      });
+
+      alert('Dados armazenados no Firebase!');
+      document.getElementById('myForm').reset();  // Limpa o formulário após o envio
+    } catch (e) {
+      console.error('Erro ao enviar dados: ', e);  // Log do erro
+      alert('Erro ao armazenar dados: ' + e.message);  // Exibe a mensagem do erro
+    }
+  });
 });
