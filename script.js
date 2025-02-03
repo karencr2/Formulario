@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function() {
         timestamp: new Date()  /
       });
 
-      alert('Dados armazenados no Firebase!');
+      alert('Dados armazenados com sucesso, thanks!');
       document.getElementById('myForm').reset();   
 } catch (error) {
   console.error('Erro ao enviar dados: ', error);  
