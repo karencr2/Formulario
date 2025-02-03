@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
         fonte: fonte,
         design_layout: design_layout,
         frequencia: frequencia,
-        timestamp: new Date()  /
+        timestamp: new Date()  
       });
 
       alert('Dados armazenados com sucesso, thanks!');
