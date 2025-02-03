@@ -24,20 +24,38 @@ document.addEventListener("DOMContentLoaded", function() {
   document.getElementById('myForm').addEventListener('submit', async function(event) {
     event.preventDefault();  
 
+   
     // Coleta os dados do formulário
     const nome = document.getElementById('nome').value;
+    const sobrenome = document.getElementById('sobrenome').value;
     const email = document.getElementById('email').value;
     const setor = document.getElementById('setor').value;
+    const cargo = document.getElementById('cargo').value;
     const prioridade = document.getElementById('prioridade').value;
+    const objetivo = document.getElementById('objetivo').value;
+    const necessidade = document.getElementById('necessidade').value;
+    const usuarios = document.getElementById('usuarios').value;
+    const fonte = document.getElementById('fonte').value;
+    const design_layout = document.getElementById('fonte_dados').value; 
+    const frequencia = document.getElementById('frequencia').value;
+
 
     try {
       // Envia os dados para a coleção 'form_data' no Firestore
       await addDoc(collection(db, "form_data"), {
         nome: nome,
+        sobrenome: sobrenome,
         email: email,
         setor: setor,
+        cargo: cargo,
         prioridade: prioridade,
-        timestamp: new Date()   
+        objetivo: objetivo,
+        necessidade: necessidade,
+        usuarios: usuarios,
+        fonte: fonte,
+        design_layout: design_layout,
+        frequencia: frequencia,
+        timestamp: new Date()  /
       });
 
       alert('Dados armazenados no Firebase!');
