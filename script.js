@@ -42,9 +42,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
       alert('Dados armazenados no Firebase!');
       document.getElementById('myForm').reset();   
-    } catch (e) {
-      console.error('Erro ao enviar dados: ', e);   
-      alert('Erro ao armazenar dados: ' + e.message);   
-    }
+} catch (error) {
+  console.error('Erro ao enviar dados: ', error);  
+  alert('Erro ao armazenar dados: ' + error.message);  
+}
+
   });
 });
