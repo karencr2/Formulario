@@ -132,8 +132,9 @@ fieldset {
     background: #6e7374;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 768px) {
     form {
-        width: 90%;
+        width: 95%;
+        padding: 15px;
     }
 }
